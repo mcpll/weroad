@@ -1,0 +1,46 @@
+{
+  "travels": [
+    {
+      "id": "1",
+      "name": "India",
+      "date": {
+        "departure": "12-12-2025",
+        "return": "24-12-2025"
+      },
+      "price": 800,
+      "image": "",
+      "description": "Esplora l'incantevole India attraverso un viaggio ricco di colori, culture e avventure. Dalle maestose montagne dell'Himalaya alle spiagge tropicali del Kerala, immergiti nell'atmosfera vibrante dei mercati affollati, assapora i sapori speziati della cucina locale e ammira antichi monumenti come il Taj Mahal. Scopri la spiritualità nei templi induisti e buddisti e lasciati trasportare dalla bellezza senza tempo dei paesaggi rurali. Un'esperienza indimenticabile che ti avvolgerà con la sua magia e lascia un'impronta indelebile nel cuore.",
+      "rating": 100
+    }
+  ],
+  "bookings": [
+    {
+      "travel": 1,
+      "user_info": {
+        "id": 1,
+        "name": "Matteo",
+        "email": "Bonini",
+        "phone": "3927887421",
+        "age": 25,
+        "gender": "male"
+      },
+      "payment_type": "Paypal",
+      "notes": "bla bla bla bla bla",
+      "id": "bece"
+    },
+    {
+      "travel": 2,
+      "user_info": {
+        "id": 1,
+        "name": "Giulia",
+        "email": "Lancietti",
+        "phone": "3927887421",
+        "age": 22,
+        "gender": "male"
+      },
+      "payment_type": "Revault",
+      "notes": "bla bla bla bla bla",
+      "id": "9c52"
+    }
+  ]
+}
