@@ -11,6 +11,7 @@
     "startServer": "json-server -p 4000 ./assets/db/db.json"
   },
   "dependencies": {
+    "@formkit/nuxt": "^1.6.2",
     "json-server": "^1.0.0-alpha.23",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",

@@ -1,16 +1,12 @@
 <script setup lang="ts">
-import type { Travel } from "~/types/Travel";
-
-const url = "http://localhost:4000/travels";
-const travels = ref<Array<Travel>>([]);
-
-const { travelsList, deleteTravel } = useTravel();
+const { travelsList, deleteTravel } = await useTravel();
+const router = useRouter();
 </script>
 
 <template>
   <div class="container mx-auto">
     <h1>Travels</h1>
-    <div v-if="travels">
+    <div v-if="travelsList">
       <table class="table mx-auto">
         <thead>
           <tr>
@@ -30,12 +26,20 @@ const { travelsList, deleteTravel } = useTravel();
             <td>{{ travel.description }}</td>
             <td>{{ travel.rating }}</td>
             <td>
-              <button
-                @click="deleteTravel(travel.id)"
-                class="btn btn-square btn-xs"
-              >
-                X
-              </button>
+              <div class="flex justify-between gap-2">
+                <button
+                  @click="deleteTravel(travel)"
+                  class="btn btn-square btn-xs btn-secondary px-4"
+                >
+                  X
+                </button>
+                <button
+                  @click="router.push({ path: `/travels/${travel.id}` })"
+                  class="btn btn-square btn-xs btn-primary px-4"
+                >
+                  Edit
+                </button>
+              </div>
             </td>
           </tr>
         </tbody>

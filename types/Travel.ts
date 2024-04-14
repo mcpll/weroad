@@ -1,5 +1,5 @@
 export interface Travel {
-  id: number;
+  id: string;
   name: string;
   date: {
     departure: string;

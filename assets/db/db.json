@@ -2,15 +2,25 @@
   "travels": [
     {
       "id": "1",
-      "name": "India",
+      "name": "Marocco",
       "date": {
-        "departure": "12-12-2025",
-        "return": "24-12-2025"
+        "departure": "2024-04-26",
+        "return": "2024-04-30"
       },
-      "price": 800,
-      "image": "",
-      "description": "Esplora l'incantevole India attraverso un viaggio ricco di colori, culture e avventure. Dalle maestose montagne dell'Himalaya alle spiagge tropicali del Kerala, immergiti nell'atmosfera vibrante dei mercati affollati, assapora i sapori speziati della cucina locale e ammira antichi monumenti come il Taj Mahal. Scopri la spiritualità nei templi induisti e buddisti e lasciati trasportare dalla bellezza senza tempo dei paesaggi rurali. Un'esperienza indimenticabile che ti avvolgerà con la sua magia e lascia un'impronta indelebile nel cuore.",
-      "rating": 100
+      "description": "Esplora il Marocco, un incrocio di culture e paesaggi mozzafiato. Perditi nei labirinti delle medine, ammira le moschee decorate e scopri i mercati vivaci. Assapora i sapori speziati della cucina marocchina e lasciati incantare dal deserto dorato del Sahara.",
+      "price": "1100",
+      "rating": "16"
+    },
+    {
+      "id": "2",
+      "name": "Venezuela",
+      "date": {
+        "departure": "2024-04-15",
+        "return": "2024-04-30"
+      },
+      "description": "Esplora il Venezuela, terra di contrasti e bellezze naturali mozzafiato. Ammira le imponenti cascate del Salto Angel, esplora le spiagge incontaminate dei Caraibi e percorri le strade colorate di Caracas. Assapora i sapori unici della cucina venezuelana e scopri la vibrante cultura musicale del paese.",
+      "price": "3000",
+      "rating": "100"
     }
   ],
   "bookings": [
