@@ -1,49 +1,46 @@
 <script setup lang="ts">
-const { travelsList, deleteTravel } = await useTravel();
+const { travelsList, deleteTravel } = useTravel();
 const router = useRouter();
 </script>
-
 <template>
   <div class="container mx-auto">
-    <h1>Travels</h1>
-    <div v-if="travelsList">
-      <table class="table mx-auto">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Rating</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="travel in travelsList" :key="travel.id">
-            <td>
-              <img :src="travel.image" class="img-fluid" style="width: 100px" />
-            </td>
-            <td>{{ travel.name }}</td>
-            <td>{{ travel.description }}</td>
-            <td>{{ travel.rating }}</td>
-            <td>
-              <div class="flex justify-between gap-2">
-                <button
-                  @click="deleteTravel(travel)"
-                  class="btn btn-square btn-xs btn-secondary px-4"
-                >
-                  X
-                </button>
-                <button
-                  @click="router.push({ path: `/travels/${travel.id}` })"
-                  class="btn btn-square btn-xs btn-primary px-4"
-                >
-                  Edit
-                </button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="flex justify-center my-10">
+      <h1 class="text-6xl">Travels</h1>
+    </div>
+    <div class="flex justify-end my-8">
+      <button
+        @click="router.push({ path: `/travels/add` })"
+        class="btn btn-secondary"
+      >
+        Add travel
+      </button>
+    </div>
+
+    <div class="mainGrid" v-if="travelsList" c>
+      <div
+        v-for="travel in travelsList"
+        :key="travel.id"
+        class="card w-80 md:w-full bg-base-100 shadow-xl"
+      >
+        <figure>
+          <img :src="travel.image" alt="Shoes" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">{{ travel.name }}</h2>
+          <p class="text-sm">{{ travel.description }}</p>
+          <div class="card-actions mt-3 justify-end">
+            <button @click="deleteTravel(travel)" class="btn btn-primary">
+              Delete
+            </button>
+            <button
+              @click="router.push({ path: `/travels/${travel.id}` })"
+              class="btn btn-secondary"
+            >
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <div v-else>
       <div class="flex flex-col gap-4 w-52">
@@ -54,6 +51,14 @@ const router = useRouter();
       </div>
     </div>
   </div>
+  <div class="pt-2 p-4"></div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.mainGrid {
+  @apply grid justify-items-center grid-cols-1 justify-center gap-6;
+  @apply md:grid-cols-2 md:justify-between gap-6;
+  @apply lg:grid-cols-3;
+  @apply xl:grid-cols-4;
+}
+</style>

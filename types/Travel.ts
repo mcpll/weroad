@@ -6,6 +6,7 @@ export interface Travel {
     return: string;
   };
   price: number;
+  travelImage: Array<object>;
   image: string;
   description: string;
   rating: number;

@@ -1,31 +1,99 @@
 {
   "travels": [
     {
-      "id": "1",
+      "id": "b23cf57b-5293-406c-94e6-7750a31db1c9",
       "name": "Marocco",
       "date": {
         "departure": "2024-04-26",
         "return": "2024-04-30"
       },
       "description": "Esplora il Marocco, un incrocio di culture e paesaggi mozzafiato. Perditi nei labirinti delle medine, ammira le moschee decorate e scopri i mercati vivaci. Assapora i sapori speziati della cucina marocchina e lasciati incantare dal deserto dorato del Sahara.",
-      "price": "1100",
-      "rating": "16"
+      "price": "600",
+      "rating": "61",
+      "travelImage": [
+        {
+          "name": "istockphoto-982105760-612x612.jpg",
+          "file": {}
+        }
+      ],
+      "image": "https://i.ibb.co/zXtXC1L/istockphoto-982105760-612x612.jpg"
     },
     {
-      "id": "2",
+      "id": "6fee2867-1fad-46a7-b7a8-83af2be64411",
       "name": "Venezuela",
       "date": {
         "departure": "2024-04-15",
         "return": "2024-04-30"
       },
       "description": "Esplora il Venezuela, terra di contrasti e bellezze naturali mozzafiato. Ammira le imponenti cascate del Salto Angel, esplora le spiagge incontaminate dei Caraibi e percorri le strade colorate di Caracas. Assapora i sapori unici della cucina venezuelana e scopri la vibrante cultura musicale del paese.",
-      "price": "3000",
-      "rating": "100"
+      "price": "2000",
+      "rating": "100",
+      "travelImage": [
+        {
+          "name": "istockphoto-500750930-612x612.jpg",
+          "file": {}
+        }
+      ],
+      "image": "https://i.ibb.co/WzRqZ7p/istockphoto-500750930-612x612.jpg"
+    },
+    {
+      "id": "74f43b06-655d-4706-8229-1972c54d31b2",
+      "name": "Pakistan",
+      "date": {
+        "departure": "2024-04-15",
+        "return": "2024-04-26"
+      },
+      "description": "Il Pakistan, situato nell'Asia meridionale, è una nazione ricca di diversità culturale, paesaggi mozzafiato e una storia complessa. Con una popolazione di oltre 200 milioni di persone, è una repubblica federale con una cultura che mescola influenze indù, musulmane e persiane. Le sue città, come Karachi, Lahore e Islamabad, sono vivaci centri culturali e commerciali. Il paese è noto per i suoi monumenti storici, come il forte di Lahore e le rovine di Mohenjo-daro, risalenti alla civiltà della Valle dell'Indo.",
+      "price": "1200",
+      "rating": "77",
+      "travelImage": [
+        {
+          "name": "istockphoto-619503842-612x612.jpg",
+          "file": {}
+        }
+      ],
+      "image": "https://i.ibb.co/tCfRCgh/istockphoto-619503842-612x612.jpg"
+    },
+    {
+      "id": "a4f49786-2efe-461a-8467-999ef9dd1d85",
+      "name": "Dagestan",
+      "date": {
+        "departure": "2024-04-22",
+        "return": "2024-04-30"
+      },
+      "description": "Il Daghestan, situato nel Caucaso settentrionale, è una repubblica della Federazione Russa con una ricca diversità etnica, culturale e paesaggistica. Con una popolazione di oltre 3 milioni di persone, è caratterizzato da una miriade di gruppi etnici, tra cui avari, dargini, lezgini e altri. Le sue montagne spettacolari, valli verdi e coste sul Mar Caspio offrono paesaggi mozzafiato. Le città come Makhachkala e Derbent sono centri culturali e storici, con antiche fortezze e moschee.",
+      "price": "900",
+      "rating": "68",
+      "travelImage": [
+        {
+          "name": "istockphoto-1445180982-612x612.jpg",
+          "file": {}
+        }
+      ],
+      "image": "https://i.ibb.co/2Fh90CM/istockphoto-1445180982-612x612.jpg"
+    },
+    {
+      "id": "5d93d39a-06f4-43e2-ace7-eb87df752388",
+      "name": "Grecia",
+      "date": {
+        "departure": "2024-06-10",
+        "return": "2024-06-17"
+      },
+      "description": "La Grecia, culla della civiltà occidentale, incanta con la sua ricca storia e paesaggi mozzafiato. Qui, antiche rovine come l'Acropoli di Atene si fondono con il mare cristallino delle isole come Santorini e Creta. Ogni angolo racconta storie di dei, eroi e filosofi, mentre la cucina locale seduce i palati con sapori autentici di oliva e feta. Un viaggio in Grecia è un tuffo affascinante nel passato, abbracciato dalla calda ospitalità del suo popolo.",
+      "price": "800",
+      "rating": "70",
+      "travelImage": [
+        {
+          "name": "istockphoto-475124388-612x612.jpg",
+          "file": {}
+        }
+      ],
+      "image": "https://i.ibb.co/nb8Mzg8/istockphoto-475124388-612x612.jpg"
     }
   ],
   "bookings": [
     {
-      "travel": 1,
+      "travel": "6fee2867-1fad-46a7-b7a8-83af2be64411",
       "user_info": {
         "id": 1,
         "name": "Matteo",
@@ -39,7 +107,7 @@
       "id": "bece"
     },
     {
-      "travel": 2,
+      "travel": "b23cf57b-5293-406c-94e6-7750a31db1c9",
       "user_info": {
         "id": 1,
         "name": "Giulia",
@@ -50,7 +118,7 @@
       },
       "payment_type": "Revault",
       "notes": "bla bla bla bla bla",
-      "id": "9c52"
+      "id": "c97405f6-b9e0-4c9b-a8cd-f9fc9ea78393"
     }
   ]
 }

@@ -1,19 +1,27 @@
 import { type Travel } from "~/types/Travel";
 import { travelUrl } from "~/utils/endpoint";
 
-export default function useTravel(id?: number | undefined) {
+export default function useTravel(id?: string | undefined) {
   const travelsList = ref<Array<Travel>>([]);
   const travelId = ref(id);
+  const isLoading: Ref<boolean> = ref(false);
+  const isReady: Ref<boolean> = ref(false);
   const onFetchTravel = async () => {
-    const {
-      data: { value: fetchTravels },
-    } = await useFetch(travelUrl(travelId));
-
-    travelsList.value = fetchTravels as Travel[];
+    isLoading.value = true;
+    const data = await fetch(travelUrl(travelId)).then((res) => res.json());
+    travelsList.value = data as Travel[];
+    isLoading.value = false;
+    isReady.value = true;
   };
 
+  fetch(travelUrl(travelId))
+    .then((res) => res.json())
+    .then((json) => {
+      travelsList.value = json as Travel[];
+    });
+
   const deleteTravel = async (travel: Travel) => {
-    const id: number = +travel.id;
+    const id: string = travel.id;
     await $fetch(`http://localhost:4000/travels/${id}`, {
       method: "DELETE",
     });
@@ -21,8 +29,8 @@ export default function useTravel(id?: number | undefined) {
     travelsList.value = newTravels as Travel[];
   };
 
-  const editTravel = async (id: number, travel: Travel) => {
-    $fetch(`http://localhost:4000/travels/${id}`, {
+  const editTravel = async (id: string, travel: Travel) => {
+    await $fetch(`http://localhost:4000/travels/${id}`, {
       method: "PATCH",
       body: travel,
     });
@@ -44,5 +52,7 @@ export default function useTravel(id?: number | undefined) {
     editTravel,
     addTravel,
     deleteTravel,
+    isLoading,
+    isReady,
   };
 }

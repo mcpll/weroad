@@ -1,4 +1,4 @@
-export const travelUrl: (id?: Ref<number | undefined>) => string = (id) => {
+export const travelUrl: (id?: Ref<string | undefined>) => string = (id) => {
   let url: string = "";
   id?.value === undefined
     ? (url = "http://localhost:4000/travels")
