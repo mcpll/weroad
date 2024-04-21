@@ -1,7 +1,7 @@
 import { bookingUrl } from '~/utils/endpoint';
 import type { Booking } from '~/types/Booking';
 
-export default function useTravel(id?: string | undefined) {
+export default function useBookings(id?: string | undefined) {
   const bookingsList = ref<Array<Booking>>([]);
   const travelId: Ref<string | undefined> = ref(id);
   const isLoading: Ref<boolean | undefined> = ref<boolean>(false);
@@ -16,7 +16,7 @@ export default function useTravel(id?: string | undefined) {
   };
 
   const addBooking = async (booking: Booking) => {
-    $fetch(`http://localhost:4000/bookings`, {
+    await $fetch(`http://localhost:4000/bookings`, {
       method: 'POST',
       body: booking,
     });

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { Travel } from '~/types/Travel';
 import type { User } from '~/types/User';
-import PaymentSelector from '~/components/paymentSelector.vue';
 import type { PaymentData } from '~/types/PaymentData';
 
 const travelSelect: Ref<Travel | undefined> = ref();

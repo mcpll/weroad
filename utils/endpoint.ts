@@ -1,5 +1,5 @@
 export const travelUrl: (id?: Ref<string | undefined>) => string = (id) => {
-  let url: string = '';
+  let url: string;
   id?.value === undefined
     ? (url = 'http://localhost:4000/travels')
     : (url = `http://localhost:4000/travels/${id.value}`);
@@ -7,7 +7,7 @@ export const travelUrl: (id?: Ref<string | undefined>) => string = (id) => {
 };
 
 export const bookingUrl: (id?: Ref<string | undefined>) => string = (id) => {
-  let url: string = '';
+  let url: string;
   id?.value === undefined
     ? (url = 'http://localhost:4000/bookings')
     : (url = `http://localhost:4000/bookings/${id.value}`);

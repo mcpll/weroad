@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { v4 as uuid } from 'uuid';
-import useImgbb from '~/composables/useImgbb';
 import type { TravelData } from '~/types/TravelData';
 import normalizeTravel from '~/utils/normalizeTravel';
 
-const route = useRoute();
+const router = useRouter();
 const { travelsList, addTravel, isReady } = useTravel();
 const { uploadImage } = useImgbb();
 
@@ -13,6 +11,7 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
   body.append('image', tmpTravel.travelImage[0].file);
   tmpTravel.image = await uploadImage(body);
   await addTravel(normalizeTravel(tmpTravel));
+  router.push({ path: '/travels' });
 };
 </script>
 

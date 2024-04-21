@@ -2,24 +2,24 @@ import { type Travel } from '~/types/Travel';
 import { travelUrl } from '~/utils/endpoint';
 
 export default function useTravel(id?: string | undefined) {
-  const travelsList: Ref<Travel[]> = ref<Array<Travel>>([]);
+  const list: Ref<Travel[]> = ref<Array<Travel>>([]);
   const travelId: Ref<string | undefined> = ref(id);
   const isLoading: Ref<boolean> = ref<boolean>(false);
   const isReady: Ref<boolean> = ref<boolean>(false);
+  const filter: Ref<string> = ref('');
+
+  const travelsList = computed(() => {
+    if (filter.value == '') return list.value;
+    return list.value.filter((travel: Travel) => travel.name === filter.value);
+  });
 
   const onFetchTravel = async () => {
     isLoading.value = true;
-    const data = await fetch(travelUrl(travelId)).then((res) => res.json());
-    travelsList.value = data as Travel[];
-    isLoading.value = false;
+    const data = await $fetch(travelUrl(travelId));
     isReady.value = true;
+    list.value = data as Travel[];
+    isLoading.value = false;
   };
-
-  fetch(travelUrl(travelId))
-    .then((res) => res.json())
-    .then((json) => {
-      travelsList.value = json as Travel[];
-    });
 
   const deleteTravel = async (travel: Travel) => {
     const id: string = travel.id;
@@ -27,7 +27,8 @@ export default function useTravel(id?: string | undefined) {
       method: 'DELETE',
     });
     const newTravels = await $fetch(travelUrl());
-    travelsList.value = newTravels as Travel[];
+    list.value = newTravels as Travel[];
+    console.log('diociccione');
   };
 
   const editTravel = async (id: string, travel: Travel) => {
@@ -36,11 +37,11 @@ export default function useTravel(id?: string | undefined) {
       body: travel,
     });
     const newTravels = await $fetch(travelUrl());
-    travelsList.value = newTravels as Travel[];
+    list.value = newTravels as Travel[];
   };
 
   const addTravel = async (travel: Travel) => {
-    $fetch(`http://localhost:4000/travels`, {
+    await $fetch(`http://localhost:4000/travels`, {
       method: 'POST',
       body: travel,
     });
@@ -50,14 +51,19 @@ export default function useTravel(id?: string | undefined) {
     return await $fetch(`http://localhost:4000/travels?q=${data}`);
   };
 
+  const setFilter = (value: string): void => {
+    filter.value = value;
+  };
+
   onFetchTravel();
 
   return {
     searchTravel,
-    travelsList,
+    setFilter,
     editTravel,
     addTravel,
     deleteTravel,
+    travelsList,
     isLoading,
     isReady,
   };
