@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { Travel } from '~/types/Travel';
-import useImgbb from '~/composables/useImgbb';
+import type { TravelData } from '~/types/TravelData';
 
 const route = useRoute();
 const {
@@ -9,16 +8,18 @@ const {
   isReady,
 } = useTravel(route.params.id.toString());
 
+console.log('travel', travel);
+
 const { uploadImage } = useImgbb();
 
-const onHandleSubmit = async (tmpTravel: Travel) => {
-  if (tmpTravel.image === tmpTravel.travelImage[0]?.name) {
-    await editTravel(route.params.id.toString(), tmpTravel);
+const onHandleSubmit = async (tmpTravel: TravelData) => {
+  if (tmpTravel.image === tmpTravel.travelImage[0].name) {
+    await editTravel(route.params.id.toString(), normalizeTravel(tmpTravel));
   } else {
     const body = new FormData();
     body.append('image', tmpTravel.travelImage[0].file);
     tmpTravel.image = await uploadImage(body);
-    await editTravel(route.params.id.toString(), tmpTravel);
+    await editTravel(route.params.id.toString(), normalizeTravel(tmpTravel));
   }
 };
 </script>
@@ -27,6 +28,15 @@ const onHandleSubmit = async (tmpTravel: Travel) => {
   <div v-if="isReady" class="container mx-auto">
     <div class="flex justify-center my-10">
       <h1 class="text-6xl">Edit your travel</h1>
+    </div>
+    <div class="flex justify-between my-8 mx-8 md:mx-4">
+      <div class="text-sm breadcrumbs">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/travels">Travels</a></li>
+          <li>Edit travel</li>
+        </ul>
+      </div>
     </div>
     <FormKit
       type="form"

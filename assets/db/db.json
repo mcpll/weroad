@@ -26,7 +26,7 @@
         "return": "2024-04-30"
       },
       "description": "Esplora il Venezuela, terra di contrasti e bellezze naturali mozzafiato. Ammira le imponenti cascate del Salto Angel, esplora le spiagge incontaminate dei Caraibi e percorri le strade colorate di Caracas. Assapora i sapori unici della cucina venezuelana e scopri la vibrante cultura musicale del paese.",
-      "price": "2000",
+      "price": 2100,
       "rating": "100",
       "travelImage": [
         {
@@ -34,25 +34,7 @@
           "file": {}
         }
       ],
-      "image": "https://i.ibb.co/WzRqZ7p/istockphoto-500750930-612x612.jpg"
-    },
-    {
-      "id": "74f43b06-655d-4706-8229-1972c54d31b2",
-      "name": "Pakistan",
-      "date": {
-        "departure": "2024-04-15",
-        "return": "2024-04-26"
-      },
-      "description": "Il Pakistan, situato nell'Asia meridionale, è una nazione ricca di diversità culturale, paesaggi mozzafiato e una storia complessa. Con una popolazione di oltre 200 milioni di persone, è una repubblica federale con una cultura che mescola influenze indù, musulmane e persiane. Le sue città, come Karachi, Lahore e Islamabad, sono vivaci centri culturali e commerciali. Il paese è noto per i suoi monumenti storici, come il forte di Lahore e le rovine di Mohenjo-daro, risalenti alla civiltà della Valle dell'Indo.",
-      "price": "1200",
-      "rating": "77",
-      "travelImage": [
-        {
-          "name": "istockphoto-619503842-612x612.jpg",
-          "file": {}
-        }
-      ],
-      "image": "https://i.ibb.co/tCfRCgh/istockphoto-619503842-612x612.jpg"
+      "image": "https://i.ibb.co/CPG0gBZ/istockphoto-500750930-612x612.jpg"
     },
     {
       "id": "a4f49786-2efe-461a-8467-999ef9dd1d85",
@@ -62,7 +44,7 @@
         "return": "2024-04-30"
       },
       "description": "Il Daghestan, situato nel Caucaso settentrionale, è una repubblica della Federazione Russa con una ricca diversità etnica, culturale e paesaggistica. Con una popolazione di oltre 3 milioni di persone, è caratterizzato da una miriade di gruppi etnici, tra cui avari, dargini, lezgini e altri. Le sue montagne spettacolari, valli verdi e coste sul Mar Caspio offrono paesaggi mozzafiato. Le città come Makhachkala e Derbent sono centri culturali e storici, con antiche fortezze e moschee.",
-      "price": "900",
+      "price": 2000,
       "rating": "68",
       "travelImage": [
         {
@@ -70,7 +52,7 @@
           "file": {}
         }
       ],
-      "image": "https://i.ibb.co/2Fh90CM/istockphoto-1445180982-612x612.jpg"
+      "image": "https://i.ibb.co/CQGTh7L/istockphoto-619503842-612x612.jpg"
     },
     {
       "id": "5d93d39a-06f4-43e2-ace7-eb87df752388",
@@ -80,7 +62,7 @@
         "return": "2024-06-17"
       },
       "description": "La Grecia, culla della civiltà occidentale, incanta con la sua ricca storia e paesaggi mozzafiato. Qui, antiche rovine come l'Acropoli di Atene si fondono con il mare cristallino delle isole come Santorini e Creta. Ogni angolo racconta storie di dei, eroi e filosofi, mentre la cucina locale seduce i palati con sapori autentici di oliva e feta. Un viaggio in Grecia è un tuffo affascinante nel passato, abbracciato dalla calda ospitalità del suo popolo.",
-      "price": "800",
+      "price": "900",
       "rating": "70",
       "travelImage": [
         {
@@ -93,32 +75,97 @@
   ],
   "bookings": [
     {
-      "travel": "6fee2867-1fad-46a7-b7a8-83af2be64411",
-      "user_info": {
-        "id": 1,
-        "name": "Matteo",
-        "email": "Bonini",
-        "phone": "3927887421",
-        "age": 25,
-        "gender": "male"
-      },
+      "notes": "Test nota di prova",
       "payment_type": "Paypal",
-      "notes": "bla bla bla bla bla",
-      "id": "bece"
+      "travel": {
+        "id": "b23cf57b-5293-406c-94e6-7750a31db1c9",
+        "name": "Marocco",
+        "date": {
+          "departure": "2024-04-26",
+          "return": "2024-04-30"
+        },
+        "description": "Esplora il Marocco, un incrocio di culture e paesaggi mozzafiato. Perditi nei labirinti delle medine, ammira le moschee decorate e scopri i mercati vivaci. Assapora i sapori speziati della cucina marocchina e lasciati incantare dal deserto dorato del Sahara.",
+        "price": "600",
+        "rating": "61",
+        "travelImage": [
+          {
+            "name": "istockphoto-982105760-612x612.jpg",
+            "file": {}
+          }
+        ],
+        "image": "https://i.ibb.co/zXtXC1L/istockphoto-982105760-612x612.jpg"
+      },
+      "user_info": {
+        "name": "Matteo",
+        "surname": "Bonini",
+        "email": "matteo.bonini@gmail.com",
+        "age": "40",
+        "phone": "3927887421",
+        "gender": "Male"
+      },
+      "id": "dcf13dbe-03eb-4d7a-b8ee-29684f55992b"
     },
     {
-      "travel": "b23cf57b-5293-406c-94e6-7750a31db1c9",
-      "user_info": {
-        "id": 1,
-        "name": "Giulia",
-        "email": "Lancietti",
-        "phone": "3927887421",
-        "age": 22,
-        "gender": "male"
+      "notes": "Bla bla bla",
+      "payment_type": "Revolut",
+      "travel": {
+        "id": "5d93d39a-06f4-43e2-ace7-eb87df752388",
+        "name": "Grecia",
+        "date": {
+          "departure": "2024-06-10",
+          "return": "2024-06-17"
+        },
+        "description": "La Grecia, culla della civiltà occidentale, incanta con la sua ricca storia e paesaggi mozzafiato. Qui, antiche rovine come l'Acropoli di Atene si fondono con il mare cristallino delle isole come Santorini e Creta. Ogni angolo racconta storie di dei, eroi e filosofi, mentre la cucina locale seduce i palati con sapori autentici di oliva e feta. Un viaggio in Grecia è un tuffo affascinante nel passato, abbracciato dalla calda ospitalità del suo popolo.",
+        "price": "900",
+        "rating": "70",
+        "travelImage": [
+          {
+            "name": "istockphoto-475124388-612x612.jpg",
+            "file": {}
+          }
+        ],
+        "image": "https://i.ibb.co/nb8Mzg8/istockphoto-475124388-612x612.jpg"
       },
-      "payment_type": "Revault",
-      "notes": "bla bla bla bla bla",
-      "id": "c97405f6-b9e0-4c9b-a8cd-f9fc9ea78393"
+      "user_info": {
+        "name": "Giulia",
+        "surname": "Lancietti",
+        "email": "g.lancietti@gmail.com",
+        "age": "33",
+        "phone": "3927887421",
+        "gender": "Famale"
+      },
+      "id": "4b707c2f-3362-40f8-abd3-b0523eb1eac1"
+    },
+    {
+      "notes": "Andiamo che si parte!",
+      "payment_type": "Paypal",
+      "travel": {
+        "id": "a4f49786-2efe-461a-8467-999ef9dd1d85",
+        "name": "Dagestan",
+        "date": {
+          "departure": "2024-04-22",
+          "return": "2024-04-30"
+        },
+        "description": "Il Daghestan, situato nel Caucaso settentrionale, è una repubblica della Federazione Russa con una ricca diversità etnica, culturale e paesaggistica. Con una popolazione di oltre 3 milioni di persone, è caratterizzato da una miriade di gruppi etnici, tra cui avari, dargini, lezgini e altri. Le sue montagne spettacolari, valli verdi e coste sul Mar Caspio offrono paesaggi mozzafiato. Le città come Makhachkala e Derbent sono centri culturali e storici, con antiche fortezze e moschee.",
+        "price": "900",
+        "rating": "68",
+        "travelImage": [
+          {
+            "name": "istockphoto-1445180982-612x612.jpg",
+            "file": {}
+          }
+        ],
+        "image": "https://i.ibb.co/2Fh90CM/istockphoto-1445180982-612x612.jpg"
+      },
+      "user_info": {
+        "name": "Luca",
+        "surname": "Baldini",
+        "email": "luca.baldini@gmail.com",
+        "age": "41",
+        "phone": "3927887421",
+        "gender": "Male"
+      },
+      "id": "e0267ea9-0bad-415f-b743-ecb5df215074"
     }
   ]
 }

@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import type { Travel } from '~/types/Travel';
 import { v4 as uuid } from 'uuid';
 import useImgbb from '~/composables/useImgbb';
+import type { TravelData } from '~/types/TravelData';
+import normalizeTravel from '~/utils/normalizeTravel';
 
 const route = useRoute();
 const { travelsList, addTravel, isReady } = useTravel();
 const { uploadImage } = useImgbb();
 
-const onHandleSubmit = async (tmpTravel: Travel) => {
+const onHandleSubmit = async (tmpTravel: TravelData) => {
   const body = new FormData();
   body.append('image', tmpTravel.travelImage[0].file);
-  tmpTravel.id = uuid();
   tmpTravel.image = await uploadImage(body);
-  await addTravel(tmpTravel);
+  await addTravel(normalizeTravel(tmpTravel));
 };
 </script>
 
@@ -21,12 +21,20 @@ const onHandleSubmit = async (tmpTravel: Travel) => {
     <div class="flex justify-center my-10">
       <h1 class="text-center md:text-left text-6xl">Create your travel</h1>
     </div>
+    <div class="flex justify-between my-8 mx-8 md:mx-4">
+      <div class="text-sm breadcrumbs">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/travels">Travels</a></li>
+          <li>Add travel</li>
+        </ul>
+      </div>
+    </div>
     <FormKit
       type="form"
       @submit="onHandleSubmit"
       submit-label="Add your travel"
       :submit-attrs="{
-        inputClass: 'bg-[#a6cbb5] border-none',
         wrapperClass: '',
         outerClass:
           'flex justify-center max-w-full md:max-w-[20em] md:justify-start mt-8',

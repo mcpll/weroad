@@ -7,7 +7,13 @@ const router = useRouter();
     <div class="flex justify-center my-10">
       <h1 class="text-6xl">Travels</h1>
     </div>
-    <div class="flex justify-end my-8">
+    <div class="flex justify-between my-8 mx-8 md:mx-4">
+      <div class="text-sm breadcrumbs">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li>Travels</li>
+        </ul>
+      </div>
       <button
         @click="router.push({ path: `/travels/add` })"
         class="btn btn-secondary"
@@ -40,14 +46,6 @@ const router = useRouter();
             </button>
           </div>
         </div>
-      </div>
-    </div>
-    <div v-else>
-      <div class="flex flex-col gap-4 w-52">
-        <div class="skeleton h-32 w-full"></div>
-        <div class="skeleton h-4 w-28"></div>
-        <div class="skeleton h-4 w-full"></div>
-        <div class="skeleton h-4 w-full"></div>
       </div>
     </div>
   </div>
