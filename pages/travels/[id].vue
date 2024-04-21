@@ -55,11 +55,12 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
       >
         <div>
           <FormKit
-            help="Write here yout travel name"
-            label="Travel name"
+            help="Write here the destination"
+            label="Destination"
             name="name"
             id="name"
             type="text"
+            placeholder="Destination"
             v-model="travel.name"
             outer-class="max-w-full"
           />
@@ -70,7 +71,7 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
             label="Travel description"
             help="Write here your travel description"
             placeholder="Remember to write in complete sentences."
-            validation="length:0,600"
+            validation="required|length:0,600"
             validation-visibility="live"
             :value="travel.description"
             :validation-messages="{

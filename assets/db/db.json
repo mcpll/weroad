@@ -26,7 +26,7 @@
         "return": "2024-04-30"
       },
       "description": "Esplora il Venezuela, terra di contrasti e bellezze naturali mozzafiato. Ammira le imponenti cascate del Salto Angel, esplora le spiagge incontaminate dei Caraibi e percorri le strade colorate di Caracas. Assapora i sapori unici della cucina venezuelana e scopri la vibrante cultura musicale del paese.",
-      "price": 2100,
+      "price": 2300,
       "rating": "100",
       "travelImage": [
         {
@@ -55,22 +55,16 @@
       "image": "https://i.ibb.co/CQGTh7L/istockphoto-619503842-612x612.jpg"
     },
     {
-      "id": "5d93d39a-06f4-43e2-ace7-eb87df752388",
+      "id": "254bd0a8-0df4-4a71-81af-17e99788f8c3",
       "name": "Grecia",
+      "image": "https://i.ibb.co/4gCCQG1/istockphoto-475124388-612x612.jpg",
       "date": {
-        "departure": "2024-06-10",
-        "return": "2024-06-17"
+        "departure": "2024-06-03",
+        "return": "2024-06-10"
       },
-      "description": "La Grecia, culla della civiltà occidentale, incanta con la sua ricca storia e paesaggi mozzafiato. Qui, antiche rovine come l'Acropoli di Atene si fondono con il mare cristallino delle isole come Santorini e Creta. Ogni angolo racconta storie di dei, eroi e filosofi, mentre la cucina locale seduce i palati con sapori autentici di oliva e feta. Un viaggio in Grecia è un tuffo affascinante nel passato, abbracciato dalla calda ospitalità del suo popolo.",
-      "price": "900",
+      "price": 1300,
       "rating": "70",
-      "travelImage": [
-        {
-          "name": "istockphoto-475124388-612x612.jpg",
-          "file": {}
-        }
-      ],
-      "image": "https://i.ibb.co/nb8Mzg8/istockphoto-475124388-612x612.jpg"
+      "description": "La Grecia, culla della civiltà occidentale, incanta con la sua ricca storia e paesaggi mozzafiato. Qui, antiche rovine come l'Acropoli di Atene si fondono con il mare cristallino delle isole come Santorini e Creta. Ogni angolo racconta storie di dei, eroi e filosofi, mentre la cucina locale seduce i palati con sapori autentici di oliva e feta. Un viaggio in Grecia è un tuffo affascinante nel passato, abbracciato dalla calda ospitalità del suo popolo."
     }
   ],
   "bookings": [
@@ -166,6 +160,31 @@
         "gender": "Male"
       },
       "id": "e0267ea9-0bad-415f-b743-ecb5df215074"
+    },
+    {
+      "notes": "I'm Ready",
+      "payment_type": "Revolut",
+      "travel": {
+        "id": "254bd0a8-0df4-4a71-81af-17e99788f8c3",
+        "name": "Grecia",
+        "image": "https://i.ibb.co/4gCCQG1/istockphoto-475124388-612x612.jpg",
+        "date": {
+          "departure": "2024-06-03",
+          "return": "2024-06-10"
+        },
+        "price": 1300,
+        "rating": "70",
+        "description": "La Grecia, culla della civiltà occidentale, incanta con la sua ricca storia e paesaggi mozzafiato. Qui, antiche rovine come l'Acropoli di Atene si fondono con il mare cristallino delle isole come Santorini e Creta. Ogni angolo racconta storie di dei, eroi e filosofi, mentre la cucina locale seduce i palati con sapori autentici di oliva e feta. Un viaggio in Grecia è un tuffo affascinante nel passato, abbracciato dalla calda ospitalità del suo popolo."
+      },
+      "user_info": {
+        "name": "Saverio",
+        "surname": "Garzi",
+        "email": "matteo.bonini@gmail.com",
+        "age": "36",
+        "phone": "3927887421",
+        "gender": "Male"
+      },
+      "id": "87430712-76d8-46a4-b2b6-ed0ca4b0f75c"
     }
   ]
 }

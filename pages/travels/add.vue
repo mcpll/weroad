@@ -44,12 +44,13 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
       >
         <div>
           <FormKit
-            help="Write here the new travel name"
-            label="Travel name"
+            help="Write here the destination"
+            label="Destination"
             name="name"
             id="name"
+            validation="required"
             type="text"
-            placeholder="Travel name"
+            placeholder="Destination"
             outer-class="max-w-full"
           />
           <FormKit
@@ -72,6 +73,7 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
               help="Select your travel departure date"
               label="Travel Departure"
               name="departure"
+              validation="required"
               id="departure"
               type="date"
               outer-class="w-96 grow-0"
@@ -80,6 +82,7 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
               help="Select your travel return date"
               label="Travel Return"
               name="return"
+              validation="required"
               id="return"
               type="date"
               outer-class="w-96 grow-0"
@@ -94,6 +97,7 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
           type="number"
           name="price"
           id="price"
+          validation="required"
           label="Travel price"
           placeholder="500"
           outer-class="max-w-full w-80 md:max-w-[20em] md:w-full"
@@ -107,6 +111,7 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
           id="rating"
           value="50"
           type="range"
+          validation="required"
           label="Travel rating"
           min="0"
           max="100"
@@ -124,6 +129,7 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
           type="file"
           label="Travel image"
           accept=".jpg,.png"
+          validation="required"
           help="Inserisci qui un'immagine del tuo viaggio"
           outer-class="max-w-full w-80 md:max-w-[20em]"
         />
