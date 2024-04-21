@@ -28,7 +28,6 @@ export default function useTravel(id?: string | undefined) {
     });
     const newTravels = await $fetch(travelUrl());
     list.value = newTravels as Travel[];
-    console.log('diociccione');
   };
 
   const editTravel = async (id: string, travel: Travel) => {

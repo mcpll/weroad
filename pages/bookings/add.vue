@@ -11,7 +11,6 @@ const currentStep = ref(1);
 const { addBooking } = useBookings();
 
 const handleSubmitStep = (step: number, data: Travel | User | PaymentData) => {
-  console.log('handleSubmitStep');
   switch (step) {
     case 1:
       travelSelect.value = data as Travel;
