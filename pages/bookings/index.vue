@@ -26,7 +26,7 @@ const router = useRouter();
       <div
         v-for="booking in bookingsList"
         :key="booking.id"
-        class="card card-side w-80 md:w-full bg-base-100 shadow-xl mb-8 bg-white"
+        class="card card-side w-80 md:w-full shadow-xl mb-8 !bg-white"
       >
         <div class="card-body">
           <h2 class="card-title">
@@ -51,6 +51,6 @@ const router = useRouter();
 <style scoped>
 .mainGrid {
   @apply flex flex-col;
-  @apply justify-center items-center;
+  @apply justify-center items-center; 
 }
 </style>
