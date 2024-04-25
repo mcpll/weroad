@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@formkit/nuxt'],
+  modules: ['@formkit/nuxt', "@nuxt/eslint"],
   formkit: {
     // Experimental support for auto loading (see note):
     autoImport: true,

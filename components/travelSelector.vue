@@ -24,10 +24,10 @@ const handleChoseTravel = (travel: Travel) => {
   <div class="travelSelector">
     <div class="searchBox flex justify-center">
       <FormKit
+        v-model="searchString"
         type="search"
         placeholder="Search..."
         label="Where do you want to go?"
-        v-model="searchString"
       />
     </div>
     <div class="searchResult">
@@ -36,7 +36,7 @@ const handleChoseTravel = (travel: Travel) => {
           class="card w-80 md:w-full card-side bg-base-100 shadow-xl max-h-[240px]"
         >
           <figure>
-            <img :src="travel.image" :alt="travel.name" />
+            <img :src="travel.image" :alt="travel.name" >
           </figure>
           <div class="card-body p-4 md:p-8">
             <h2 class="card-title">{{ travel.name }}</h2>
@@ -45,8 +45,8 @@ const handleChoseTravel = (travel: Travel) => {
             </p>
             <div class="card-actions justify-end">
               <button
-                @click="handleChoseTravel(travel)"
                 class="btn btn-primary"
+                @click="handleChoseTravel(travel)"
               >
                 Choose
               </button>

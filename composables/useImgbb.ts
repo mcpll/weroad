@@ -9,7 +9,6 @@ export default function useImgbb() {
         },
       );
       console.log('res:', res);
-      // @ts-ignore
       return res.data.url;
     } catch (e) {
       console.log('error', e);

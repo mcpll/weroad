@@ -6,11 +6,12 @@ import type { PaymentData } from '~/types/PaymentData';
 const travelSelect: Ref<Travel | undefined> = ref();
 const userSelect: Ref<User | undefined> = ref(undefined);
 const payment: Ref<string> = ref('');
+let paymentData: PaymentData;
 const notes: Ref<string> = ref('');
 const currentStep = ref(1);
 const { addBooking } = useBookings();
 
-const handleSubmitStep = (step: number, data: Travel | User | PaymentData) => {
+const handleSubmitStep = (step: number, data: Travel | User | PaymentData | object) => {
   switch (step) {
     case 1:
       travelSelect.value = data as Travel;
@@ -19,7 +20,7 @@ const handleSubmitStep = (step: number, data: Travel | User | PaymentData) => {
       userSelect.value = data as User;
       break;
     case 3:
-      const paymentData = data as PaymentData;
+      paymentData = data as PaymentData;
       payment.value = paymentData.payment;
       notes.value = paymentData.notes;
       submitBookings();
@@ -75,18 +76,18 @@ const handleSetCurrentStep = (step: number) => {
     <div class="multistepContainer">
       <div v-if="currentStep === 1" class="firstStep">
         <travel-selector
-          @onSubmit="handleSubmitStep"
-          @onSetStep="handleSetCurrentStep"
+          @on-submit="handleSubmitStep"
+          @on-set-step="handleSetCurrentStep"
         />
       </div>
       <div v-if="currentStep === 2" class="secondStep">
         <user-selector
-          @onSubmit="handleSubmitStep"
-          @onSetStep="handleSetCurrentStep"
+          @on-submit="handleSubmitStep"
+          @on-set-step="handleSetCurrentStep"
         />
       </div>
       <div v-if="currentStep === 3">
-        <payment-selector @onSubmit="handleSubmitStep" />
+        <payment-selector @on-submit="handleSubmitStep" />
       </div>
     </div>
   </div>

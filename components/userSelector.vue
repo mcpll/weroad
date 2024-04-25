@@ -16,34 +16,34 @@ const onHandleSubmit = (user: User) => {
   <div class="container mx-auto">
     <FormKit
       type="form"
-      @submit="onHandleSubmit"
       :classes="{
         messages: '!text-center mb-4',
         actions: 'flex justify-center userSubmit',
       }"
+      @submit="onHandleSubmit"
     >
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="col1 flex flex-col items-center md:items-end">
           <FormKit
+            id="name"
             type="text"
             name="name"
-            id="name"
             label="Enter your name"
             validation="required"
             outer-class="w-80 !min-h-[95px]"
           />
           <FormKit
+            id="surname"
             type="text"
             name="surname"
-            id="surname"
             validation="required"
             label="Enter your surname"
             outer-class="w-80 !min-h-[95px]"
           />
           <FormKit
+            id="email"
             type="email"
             name="email"
-            id="email"
             validation="required"
             label="Enter your email here"
             outer-class="w-80 !min-h-[95px]"
@@ -51,9 +51,9 @@ const onHandleSubmit = (user: User) => {
         </div>
         <div class="col2 flex flex-col items-center md:items-baseline">
           <FormKit
+            id="age"
             type="number"
             name="age"
-            id="age"
             validation="required"
             label="Enter here your age"
             outer-class=" w-80 !min-h-[95px]"
@@ -68,11 +68,11 @@ const onHandleSubmit = (user: User) => {
             outer-class="w-80 !min-h-[95px]"
           />
           <FormKit
+            id="gender"
             type="select"
             label="Enter here you gender"
             name="gender"
             validation="required"
-            id="gender"
             :options="['Male', 'Famale', 'Other']"
             outer-class="w-80 !min-h-[95px]"
           />

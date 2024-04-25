@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { travelsList, deleteTravel, setFilter, isReady } = useTravel();
+const { travelsList, deleteTravel, setFilter, isReady, filterValues } = useTravel();
 const router = useRouter();
 const selected = ref('');
 </script>
@@ -16,8 +16,8 @@ const selected = ref('');
         </ul>
       </div>
       <button
-        @click="router.push({ path: `/travels/add` })"
         class="btn btn-secondary"
+        @click="router.push({ path: `/travels/add` })"
       >
         Add travel
       </button>
@@ -26,43 +26,43 @@ const selected = ref('');
       <div>
         <p class="my-2">Choose you destination:</p>
         <select
-          class="select select-bordered select-sm w-full max-w-xs"
-          name="nation"
           id="nation"
           v-model="selected"
+          class="select select-bordered select-sm w-full max-w-xs"
+          name="nation"
           @change="setFilter(selected)"
         >
-          <option value="" selected="selected"></option>
+          <option value="" selected="true"/>
           <option
-            v-for="travel in travelsList"
-            :key="travel?.id"
-            :value="travel?.name"
+            v-for="filtervalue in filterValues"
+            :key="filtervalue?.id"
+            :value="filtervalue?.name"
           >
-            {{ travel?.name }}
+            {{ filtervalue?.name }}
           </option>
         </select>
       </div>
     </div>
 
-    <div class="mainGrid" v-if="travelsList">
+    <div v-if="travelsList" class="mainGrid">
       <div
         v-for="travel in travelsList"
         :key="travel.id"
         class="card w-80 md:w-full bg-base-100 shadow-xl"
       >
         <figure>
-          <img :src="travel.image" :alt="travel.name" />
+          <img :src="travel.image" :alt="travel.name" >
         </figure>
         <div class="card-body">
           <h2 class="card-title">{{ travel.name }}</h2>
           <p class="text-sm">{{ travel.description }}</p>
           <div class="card-actions mt-3 justify-end">
-            <button @click="deleteTravel(travel)" class="btn btn-primary">
+            <button class="btn btn-primary" @click="deleteTravel(travel)">
               Delete
             </button>
             <button
-              @click="router.push({ path: `/travels/${travel.id}` })"
               class="btn btn-secondary"
+              @click="router.push({ path: `/travels/${travel.id}` })"
             >
               Edit
             </button>
@@ -71,7 +71,6 @@ const selected = ref('');
       </div>
     </div>
   </div>
-  <div class="pt-2 p-4"></div>
 </template>
 
 <style scoped>

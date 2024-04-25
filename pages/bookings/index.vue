@@ -16,8 +16,8 @@ const router = useRouter();
         </ul>
       </div>
       <button
-        @click="router.push({ path: `/bookings/add` })"
         class="btn btn-secondary"
+        @click="router.push({ path: `/bookings/add` })"
       >
         Add Booking
       </button>

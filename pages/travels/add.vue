@@ -3,7 +3,7 @@ import type { TravelData } from '~/types/TravelData';
 import normalizeTravel from '~/utils/normalizeTravel';
 
 const router = useRouter();
-const { travelsList, addTravel, isReady } = useTravel();
+const { addTravel, isReady } = useTravel();
 const { uploadImage } = useImgbb();
 
 const onHandleSubmit = async (tmpTravel: TravelData) => {
@@ -31,23 +31,23 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
     </div>
     <FormKit
       type="form"
-      @submit="onHandleSubmit"
       submit-label="Add your travel"
       :submit-attrs="{
         wrapperClass: '',
         outerClass:
           'flex justify-center max-w-full md:max-w-[20em] md:justify-start mt-8',
       }"
+      @submit="onHandleSubmit"
     >
       <div
         class="grid grid-cols-1 justify-items-center md:justify-items-stretch md:grid-cols-2 gap-4"
       >
         <div>
           <FormKit
+            id="name"
             help="Write here the destination"
             label="Destination"
             name="name"
-            id="name"
             validation="required"
             type="text"
             placeholder="Destination"
@@ -68,22 +68,22 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
           />
         </div>
         <div class="flex items-center flex-col">
-          <FormKit type="group" name="date" id="date">
+          <FormKit id="date" type="group" name="date">
             <FormKit
+              id="departure"
               help="Select your travel departure date"
               label="Travel Departure"
               name="departure"
               validation="required"
-              id="departure"
               type="date"
               outer-class="w-96 grow-0"
             />
             <FormKit
+              id="return"
               help="Select your travel return date"
               label="Travel Return"
               name="return"
               validation="required"
-              id="return"
               type="date"
               outer-class="w-96 grow-0"
             />
@@ -94,9 +94,9 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
         class="grid justify-items-center md:justify-items-stretch grid-cols-1 gap-4"
       >
         <FormKit
+          id="price"
           type="number"
           name="price"
-          id="price"
           validation="required"
           label="Travel price"
           placeholder="500"
@@ -107,8 +107,8 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
         class="grid justify-items-center md:justify-items-stretch grid-cols-1 gap-4"
       >
         <FormKit
-          name="rating"
           id="rating"
+          name="rating"
           value="50"
           type="range"
           validation="required"
@@ -124,8 +124,8 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
         class="grid justify-items-center md:justify-items-stretch grid-cols-1 gap-4"
       >
         <FormKit
-          name="travelImage"
           id="travelImage"
+          name="travelImage"
           type="file"
           label="Travel image"
           accept=".jpg,.png"

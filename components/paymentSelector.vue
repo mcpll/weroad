@@ -3,6 +3,7 @@ const emit = defineEmits<{
   (e: 'onSubmit', step: number, data: object): void;
 }>();
 const router = useRouter();
+  
 
 const onHandleSubmit = (data: { payment: string; notes: string }) => {
   emit('onSubmit', 3, data);
@@ -14,24 +15,27 @@ const onHandleSubmit = (data: { payment: string; notes: string }) => {
   <div class="container mx-auto">
     <FormKit
       type="form"
-      @submit="onHandleSubmit"
       :classes="{
         messages: '!text-center mb-4',
         actions: 'flex justify-center userSubmit',
-      }"
+      }" 
+      @submit="onHandleSubmit"
     >
       <div class="grid grid-cols-1">
         <div class="col1 flex flex-col items-center">
           <FormKit
+            id="payment"
             type="select"
             label="Enter your payment method"
             name="payment"
             validation="required"
-            id="payment"
             help="Select your payment method"
             :options="['Credit transfer', 'Paypal', 'Revolut']"
             outer-class=" w-80 !min-h-[95px]"
           />
+          
+          
+          
           <FormKit
             type="textarea"
             auto-height

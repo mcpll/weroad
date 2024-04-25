@@ -10,7 +10,7 @@ const router = useRouter();
   >
     <div class="card w-80 bg-base-100 shadow-xl image-full">
       <figure>
-        <img :src="travelImage" alt="travel" />
+        <img :src="travelImage" alt="travel" >
       </figure>
       <div class="card-body max-h-[204px]">
         <h2 class="card-title">Travels</h2>
@@ -20,8 +20,8 @@ const router = useRouter();
         </p>
         <div class="card-actions justify-end">
           <button
-            @click="router.push({ path: '/travels' })"
             class="btn btn-secondary"
+            @click="router.push({ path: '/travels' })"
           >
             Manage your travel!
           </button>
@@ -30,7 +30,7 @@ const router = useRouter();
     </div>
     <div class="card w-80 bg-base-100 shadow-xl image-full">
       <figure>
-        <img :src="bookingImage" alt="bookings" />
+        <img :src="bookingImage" alt="bookings" >
       </figure>
       <div class="card-body">
         <h2 class="card-title">Booking Travel</h2>

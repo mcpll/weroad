@@ -8,11 +8,13 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "startServer": "json-server -p 4000 ./assets/db/db.json"
+    "startServer": "json-server -p 4000 ./assets/db/db.json",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@formkit/addons": "^1.6.2",
     "@formkit/nuxt": "^1.6.2",
+    "@nuxt/eslint": "^0.3.9",
     "@vueuse/core": "^10.9.0",
     "json-server": "0.17.4",
     "nuxt": "^3.11.2",
@@ -26,9 +28,11 @@
     "autoprefixer": "^10.4.19",
     "concurrently": "^8.2.2",
     "daisyui": "^4.10.1",
+    "eslint": "^9.1.1",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
   }
 }
