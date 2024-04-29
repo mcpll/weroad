@@ -2,17 +2,14 @@
 import type { TravelData } from '~/types/TravelData';
 
 const route = useRoute();
-const {
-  singleTravel,
-  editTravel,
-  isReady,
-} = useTravel(route.params.id.toString());
-
+const { singleTravel, editTravel, isReady } = useTravel(
+  route.params.id.toString(),
+);
 
 const { uploadImage } = useImgbb();
 
 const onHandleSubmit = async (tmpTravel: TravelData) => {
-  if (tmpTravel.image === tmpTravel.travelImage[0].name) {
+  if (!tmpTravel.travelImage[0].file) {
     await editTravel(route.params.id.toString(), normalizeTravel(tmpTravel));
   } else {
     const body = new FormData();
@@ -25,11 +22,11 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
 
 <template>
   <div v-if="isReady" class="container mx-auto">
-    <div class="flex justify-center my-10">
+    <div class="my-10 flex justify-center">
       <h1 class="text-6xl">Edit your travel</h1>
     </div>
-    <div class="flex justify-between my-8 mx-8 md:mx-4">
-      <div class="text-sm breadcrumbs">
+    <div class="mx-8 my-8 flex justify-between md:mx-4">
+      <div class="breadcrumbs text-sm">
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/travels">Travels</a></li>
@@ -49,7 +46,7 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
       @submit="onHandleSubmit"
     >
       <div
-        class="grid grid-cols-1 justify-items-center md:justify-items-stretch md:grid-cols-2 gap-4"
+        class="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2 md:justify-items-stretch"
       >
         <div>
           <FormKit
@@ -78,7 +75,7 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
             outer-class="w-96 md:max-w-full md:w-full"
           />
         </div>
-        <div class="flex items-center flex-col">
+        <div class="flex flex-col items-center">
           <FormKit id="date" type="group" name="date">
             <FormKit
               id="departure"
@@ -103,7 +100,7 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
       </div>
 
       <div
-        class="grid justify-items-center md:justify-items-stretch grid-cols-1 gap-4"
+        class="grid grid-cols-1 justify-items-center gap-4 md:justify-items-stretch"
       >
         <FormKit
           id="price"
@@ -115,7 +112,7 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
         />
       </div>
       <div
-        class="grid justify-items-center md:justify-items-stretch grid-cols-1 gap-4"
+        class="grid grid-cols-1 justify-items-center gap-4 md:justify-items-stretch"
       >
         <FormKit
           id="rating"
@@ -130,7 +127,7 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
         />
       </div>
       <div
-        class="grid justify-items-center md:justify-items-stretch grid-cols-1 gap-4"
+        class="grid grid-cols-1 justify-items-center gap-4 md:justify-items-stretch"
       >
         <FormKit
           id="travelImage"
@@ -140,7 +137,7 @@ const onHandleSubmit = async (tmpTravel: TravelData) => {
           accept=".jpg,.png"
           help="Inserisci qui un'immagine del tuo viaggio"
           outer-class="max-w-full w-80 md:max-w-[20em]"
-          :value="[{name: singleTravel.image}]"
+          :value="[{ name: singleTravel.image }]"
         />
       </div>
     </FormKit>
